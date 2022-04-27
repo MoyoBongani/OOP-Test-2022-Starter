@@ -2,8 +2,6 @@ package ie.tudublin;
 
 import java.util.ArrayList;
 
-import javax.print.attribute.standard.PrinterName;
-
 import processing.data.Table;
 import processing.data.TableRow;
 
@@ -34,6 +32,16 @@ public class NematodeVisualiser extends PApplet
 		printNematodes();		
 	}
 	
+	/*
+	public void drawNematodes() 
+	{
+		for(Nematode n:nematodes)
+		{
+			n.render(this);
+		}
+    }
+	*/
+	
 	public void printNematodes()
 	{
 		for (Nematode n:nematodes)
@@ -52,8 +60,23 @@ public class NematodeVisualiser extends PApplet
 		}
 	}
 
+	float border;
+
 	public void draw()
 	{	
+		background(0);
+		stroke(255);
+		//drawNematodes();
+	
+		int h = height / 10;
+		int w = width / 10;
+		
+		fill(255);
+		circle(400, h, w);
 
+        fill(255);
+        textSize(30);
+        textAlign(LEFT, CENTER);
+        text("Steve", 365, 10);
 	}
 }
