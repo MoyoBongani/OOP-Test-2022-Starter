@@ -1,6 +1,9 @@
 package ie.tudublin;
 
 import java.util.ArrayList;
+
+import javax.print.attribute.standard.PrinterName;
+
 import processing.data.Table;
 import processing.data.TableRow;
 
@@ -25,10 +28,20 @@ public class NematodeVisualiser extends PApplet
 	public void setup() 
 	{
 		colorMode(HSB);
-		background(0);
-		smooth();				
+		background(255);
+		smooth();
+		loadNematodes();
+		printNematodes();		
 	}
 	
+	public void printNematodes()
+	{
+		for (Nematode n:nematodes)
+		{
+			System.out.println(n);
+		}
+	}
+
 	public void loadNematodes()
 	{
 		Table table = loadTable("nematodes.csv", "header");
